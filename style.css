@@ -1,0 +1,288 @@
+*{
+    font-family: 'Nunito',sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: .2s linear;
+}
+body{
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    
+    color: #fff;
+    font-size: 1.5rem;
+
+}
+html{
+    font-size: 62.5%;
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem 9%;
+    z-index: 2;
+    background:transparent;
+}
+.header .logo img{
+    height: 6rem;
+}
+.header .navbar #close{
+    display: none;
+}
+.header .navbar a{
+    font-size: 2rem;
+    margin-right: 2rem;
+    color: white;
+
+}
+.header .navbar a:hover{
+    color:#d3ad7f;
+}
+.header #menu{
+    display: none;
+}
+section{
+    padding: 2rem 9%;
+}
+.home{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+    background: #2a201c;
+}
+.home .content{
+    flex: 1 1 40rem;
+}
+.home .content .title{
+    font-size: 6rem;
+    color:#fff;
+    text-transform: uppercase;
+}
+.home .content .title span{
+    text-transform: uppercase;
+    color:#d3ad7f;
+}
+.home .content .description{
+    font-size: 2rem;
+    font-weight: lighter;
+    line-height: 1.8;
+    padding: 1rem 0;
+    color: #fff;
+}
+.home .image{
+
+    flex:1 1 40rem;
+}
+.home .image img{
+    width: 100%;
+    margin-top: 10rem;
+}
+.home .content .btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding: .9rem 3rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: #d3ad7f;
+    cursor: pointer;
+}
+.home .content .btn:hover{
+    letter-spacing: .2rem;
+}
+.button{
+    padding: 6px 24px;
+    border: 2px solid blue;
+    background: blue;
+    border-radius: 6px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
+}
+.button:active{
+    transform: scale(0.98);
+}
+
+.form-popup{
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    background: #fff;
+    color: black;
+    max-width: 720px;
+    width: 100%;
+    opacity: 0;
+    pointer-events: none;
+    border: 2px solid #fff;
+    transform: translate(-50%,-50%);
+}
+.form-popup .form-box{
+    display: flex;
+}
+.form-box .form-details{
+    max-width: 330px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    padding: 0 20px;
+    color: #fff;
+}
+.login .form-details{
+    background:url("pic3.png");
+    background-size: cover;
+    background-position: center;
+
+}
+.signup .form-details{
+    background:url("pic3.png");
+    background-size: cover;
+    background-position: center;
+
+}
+.form-popup .close-btn{
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    color: #878484;
+    cursor: pointer;
+}
+.form-box h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+.form-box .form-content{
+    width: 100%;
+    padding: 35px;
+}
+form .input-field{
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    position: relative;
+}
+form .input-field input{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    font-size: 0.95rem;
+    border: 1px solid #717171;
+    border-radius: 3px;
+    padding: 0 15px;
+
+}
+.input-field input:focus{
+    border-color: #00bcd4;
+}
+.input-field input:is(:focus, :valid){
+    padding: 16px 15px 0;
+}
+
+form .input-field label{
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    color: #717171;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: 0.2s ease;
+
+}
+.input-field input:is(:focus, :valid) ~ label{
+    font-size:0.75rem;
+    color:#00bcd4;
+    transform:translateY(-50%);
+}
+.form-box a{
+    color: #00bcd4;
+    text-decoration: none;
+}
+.form-box a:hover{
+   
+    text-decoration: underline;
+}
+.form-box :where(.forgot-pass, .policy-text){
+    display: inline-flex;
+    margin-top: 14px;
+    font-size: 0.95rem;
+}
+form button{
+    width: 100%;
+    outline: none;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 14px 0;
+    border-radius: 3px;
+    margin: 25px 0;
+    color: #fff;
+    cursor: pointer;
+    background: #00bcd4;
+    transition: 0.2s ease;
+}
+form button:hover{
+    background: #0097a7;
+}
+.form-box .bottom-link{
+    text-align: center;
+}
+.signup .policy-text{
+    display: flex;
+    align-items: center;
+}
+.signup .policy-text input{
+    width: 14px;
+    height: 14px;
+    margin-right: 7px;
+}
+.form-popup .signup,
+.form-popup.show-signup .login{
+    display: none;
+}
+.form-popup.show-signup .signup{
+    display: flex;
+}
+.blur-bg-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    pointer-events: none;
+    backdrop-filter: blur(5px);
+    transition: 0.1s ease;
+}
+@media (max-width:760px){
+    .form-popup{
+        width:95%;
+    }
+    .form-box .form-details{
+        display: none;
+    }
+    .form-box .form-content{
+        padding: 30px 20px;
+    }
+}
+.show-popup .blur-bg-overlay{
+    opacity: 1;
+    pointer-events: auto;
+}
+.show-popup .form-popup{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%,-50%);
+    transition: transform 0.3s ease,opacity 0.1s;
+}
